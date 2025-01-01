@@ -1,9 +1,9 @@
 package ru.netology.graphics.image;
 
-public class eightBitColorSchema implements TextColorSchema {
+public class EightBitColorSchema implements TextColorSchema {
     private final String schema;
 
-    public eightBitColorSchema(String schema) {
+    public EightBitColorSchema(String schema) {
         if (schema == null || schema.isEmpty()) {
             this.schema = " ";
             return;

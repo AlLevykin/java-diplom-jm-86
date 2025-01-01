@@ -1,5 +1,7 @@
 package ru.netology.graphics;
 
+import ru.netology.graphics.image.EightBitColorSchema;
+import ru.netology.graphics.image.ImageToAsciiArtConverter;
 import ru.netology.graphics.image.TextGraphicsConverter;
 import ru.netology.graphics.server.GServer;
 
@@ -8,7 +10,10 @@ import java.io.PrintWriter;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        TextGraphicsConverter converter = null; // Создайте тут объект вашего класса конвертера
+        TextGraphicsConverter converter = new ImageToAsciiArtConverter(); // Создайте тут объект вашего класса конвертера
+        converter.setTextColorSchema(new EightBitColorSchema("#$@%*+-."));
+        converter.setMaxHeight(300);
+        converter.setMaxWidth(300);
 
         GServer server = new GServer(converter); // Создаём объект сервера
         server.start(); // Запускаем
